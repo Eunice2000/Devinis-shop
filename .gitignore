@@ -26,3 +26,10 @@ yarn-error.log*
 frontend/build
 uploads/*png
 uploads/*jpg
+# Ignore Terraform state files
+*.tfstate
+*.tfstate.*.backup
+*.tfstate.backup
+
+.terraform/
+
