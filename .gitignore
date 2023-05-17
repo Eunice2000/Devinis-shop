@@ -30,6 +30,9 @@ uploads/*jpg
 *.tfstate
 *.tfstate.*.backup
 *.tfstate.backup
-
+*.lock.hcl
 .terraform/
+# Ignore Terraform lock files
+*.tf.lock
+*.tfstate.lock.info
 
