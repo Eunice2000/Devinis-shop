@@ -77,14 +77,14 @@ jobs:
             sudo ufw --force enable 
             cd /home/ubuntu
             sudo rm -rf memories-server
-            https://github.com/Eunice2000/Devinis-shop.git
+            git clone https://github.com/Eunice2000/Devinis-shop.git
             cd Devinis-shop
             cd backend
             npm install
             sudo rm /etc/nginx/sites-available/default
             sudo cp default /etc/nginx/sites-available/ -r
             sudo pm2 kill
-            pm2 start app.js
+            pm2 start server.js
             sudo systemctl kill nginx || true
             sudo systemctl restart nginx
   # deploy-client:
