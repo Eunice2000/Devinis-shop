@@ -79,7 +79,6 @@ jobs:
             sudo rm -rf memories-server
             git clone https://github.com/Eunice2000/Devinis-shop.git
             cd Devinis-shop
-            cd backend
             npm install
             sudo rm /etc/nginx/sites-available/default
             sudo cp default /etc/nginx/sites-available/ -r
