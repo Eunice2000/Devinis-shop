@@ -14,8 +14,8 @@ jobs:
   deploy-infra:
     runs-on: ubuntu-latest
     outputs:
-      SERVER_PUBLIC_IP: ${{ steps.set-ip.outputs.Devinis-sever_public_ip }}
-      CLIENT_PUBLIC_IP: ${{ steps.set-ip.outputs.Devinis-client_public_ip }}
+      SERVER_PUBLIC_IP: ${{ steps.set-ip.outputs.server_public_ip }}
+      CLIENT_PUBLIC_IP: ${{ steps.set-ip.outputs.client_public_ip }}
     steps:
       - name: Checkout
         uses: actions/Checkout@v2
