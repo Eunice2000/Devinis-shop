@@ -35,4 +35,5 @@ uploads/*jpg
 # Ignore Terraform lock files
 *.tf.lock
 *.tfstate.lock.info
+terraform.lock
 
