@@ -6,6 +6,7 @@ terraform {
     }
   }
   backend "s3" {
+    bucket = "Devinis-shop"
     key    = "aws/Devinis-store/terraform.tfstate"
     region = "us-east-1"
   }
