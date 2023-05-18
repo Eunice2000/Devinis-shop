@@ -137,8 +137,8 @@ jobs:
             sudo rm -rf MERN-ECOMMERCE || true
             git clone https://github.com/Eunice2000/Devinis-shop.git
             cd Devinis-shop/frontend
-            touch .env
-            echo REACT_APP_API_URL=http://"${{ needs.deploy-infra.outputs.SERVER_PUBLIC_IP }}" > .env
+            #touch .env
+            echo BASE_URL=http://"${{ needs.deploy-infra.outputs.SERVER_PUBLIC_IP }}" > .constants.js
             npm install
             rm -rf build
             npm run build
