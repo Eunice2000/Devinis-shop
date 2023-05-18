@@ -137,12 +137,12 @@ jobs:
             sudo rm -rf Devinis-shop || true
             git clone https://github.com/Eunice2000/Devinis-shop.git
             cd Devinis-shop/frontend
-          # touch .env
+            #touch .env
             echo BASE_URL=http://"${{ needs.deploy-infra.outputs.SERVER_PUBLIC_IP }}" > .constants.js
             npm install
             rm -rf build
             npm run build
-           #sudo pm2 delete react-build || true
+            sudo pm2 delete react-build || true
             pm2 serve build/ 3000 -f --name "react-build" --spa
             sudo rm -rf /etc/nginx/sites-available/default
             sudo cp default /etc/nginx/sites-available/ -r
