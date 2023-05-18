@@ -113,7 +113,7 @@ jobs:
           key: ${{ env.PRIVATE_SSH_KEY }}
           envs: PRIVATE_SSH_KEY,AWS_ACCESS_KEY_ID,AWS_SECRET_ACCESS_KEY
           script: |-
-             sudo apt-get update
+            sudo apt-get update
             sudo apt-get install git -y
             echo "--NODE & NPM--"
             echo "--INSTALL NVM TO USE A SPECIFIC NODE VERSION--"
