@@ -95,7 +95,7 @@ jobs:
             sudo systemctl restart nginx
 
 
-  deploy-client:
+  ddeploy-client:
     runs-on: ubuntu-latest
     needs: [deploy-infra, deploy-server]
     steps:
@@ -133,15 +133,14 @@ jobs:
             sudo ufw allow OpenSSH
             sudo ufw allow 'Nginx Full'
             sudo ufw --force enable 
-            cd /home/ubuntu
-            sudo rm -rf Devinis-shop
+            cd /home/ubuntu/
+            sudo rm -rf MERN-ECOMMERCE || true
             git clone https://github.com/Eunice2000/Devinis-shop.git
-            cd Devinis-shop
-            cd frontend
+            cd Devinis-shop/frontend
             touch .env
             echo REACT_APP_API_URL=http://"${{ needs.deploy-infra.outputs.SERVER_PUBLIC_IP }}" > .env
-            rm -rf build
             npm install
+            rm -rf build
             npm run build
             sudo pm2 delete react-build || true
             pm2 serve build/ 3000 -f --name "react-build" --spa
